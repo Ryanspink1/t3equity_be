@@ -11,8 +11,12 @@ class Seed
   end
 
   def self.start
-    seed = Seed.new
-    puts 'ham'
+    u = User.new(username:'mike', password: 'password', role:1)
+    if u.save
+      puts 'Created admin user!'
+    else
+      puts 'Error: Validation Violation'
+    end
   end
 
 
