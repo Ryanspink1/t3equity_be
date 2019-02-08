@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  namespace :api do
+    namespace :v1 do
+      post 'user_token' => 'user_token#create'
+      resources :users, only: [:create, :destroy] do
+        resources :newsletters, only: [:create, :index, :destroy]
+      end
+    end
+  end
 end

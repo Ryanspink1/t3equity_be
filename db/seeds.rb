@@ -11,7 +11,7 @@ class Seed
   end
 
   def self.start
-    u = User.new(username:'mike', password: 'password', role:1)
+    u = User.new(email:'mike', password: 'password', role:1)
     if u.save
       puts 'Created admin user!'
     else

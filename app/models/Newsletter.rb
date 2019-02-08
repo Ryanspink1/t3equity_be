@@ -10,4 +10,7 @@ class Newsletter < ApplicationRecord
             presence: true,
             uniqueness: true
 
+    def self.order_by_creation
+      order(created_at: :desc)
+    end
 end
